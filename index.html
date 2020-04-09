@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+
+	<title>Random User Genertor</title>
+
+</head>
+<body>
+
+	<!-- Прелоадер -->
+  	<div class="preloader">
+    	<div class="preloader__loader">
+      		<img class="preloader__img" src="img/loaders.svg" alt="Загрузка">
+      		<div class="preloader__text">Подождите<br>
+				<span class="preloader__span">идет загрузка</span>
+			</div>
+    	</div>
+  	</div>
+
+	<!-- Основной контент страницы -->
+	<div class="main">
+		<div class="container">
+			<button class="button container__button js-button">
+				<a class="container__link">Загрузить пользователей</a>
+			</button>
+		</div>
+		<div class="wrapper">
+			<div class="title">Random User Genertor</div>
+			<div class="search">
+				<form class="search__form">
+					<div class="search__filter">
+						<span class="search__span">
+							<svg class="search__icon" width="512" height="512" viewBox="0 0 515.558 515.558">
+								<use xlink:href="img/sprite.svg#search"></use>
+							</svg>
+						</span>
+						<input class="search__input" type="text" placeholder="Поиск: ФИО, номер телефона, email">
+						<button class="search__button search__reset" title="Очистить поиск" type="button">
+							<svg class="search__heart" viewBox="0 0 16 16" width="20px" height="20px">
+								<use xlink:href="img/sprite.svg#icon-close-modal"></use>
+							</svg>
+						</button>
+  						<button class="search__find" type="submit">Найти</button>
+					</div>
+				</form>
+			</div>
+			<div class="sort">
+				<form class="sort__form">
+					<div class="sort__wrapper">
+						<div class="sort__alphabet">
+							<label for="az_sort" class="sort__label">Сортировать по алфавиту</label>
+							<select id="az_sort" class="sort__select">
+								<option value="0" selected>None</option>
+								<option value="1">A-Z</option>
+								<option value="-1">Z-A</option>
+							</select>
+						</div>
+						<div class="sort__gender">
+							<label for="gender_sort" class="sort__label">Сортировать по полу</label>
+							<select id="gender_sort" class="sort__select">
+								<option value="0" selected>None</option>
+								<option value="1">Сначала мужчины</option>
+								<option value="-1">Сначала женщины</option>
+							</select>
+						</div>
+					</div>
+					<div class="static__wrapper">
+						<div class="static__gender">
+							<fieldset class="static__fieldset">
+    							<legend class="static__legend">Половые признаки</legend>
+    							<div class="static__list">
+	    							<label class="static__label">
+	    								<input type="radio" value="none" class="static__input radio" name="gender_filter" checked>
+	    								None
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio"  value="male" class="static__input radio" name="gender_filter">
+	    								Мужчины
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio" value="female" class="static__input radio" name="gender_filter">
+	    								Женщины
+	  								</label>
+  								</div>
+  							</fieldset>
+						</div>
+						<div class="static__age">
+							<fieldset class="static__fieldset">
+    							<legend class="static__legend">Возраст</legend>
+    							<div class="static__list">
+	    							<label class="static__label">
+	    								<input type="radio" class="static__input radio" value="none" name="age_filter" checked>
+	    								None
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio" class="static__input radio" value="<35"  name="age_filter">
+	    								младше 35
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio" class="static__input radio" value="35-40" name="age_filter">
+	    								от 35 до 40
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio" class="static__input radio" value="40-45" name="age_filter">
+	    								от 40 до 45
+	  								</label>
+	  								<label class="static__label">
+	    								<input type="radio" class="static__input radio" value=">45" name="age_filter">
+	    								старше 45
+	  								</label>
+  								</div>
+  							</fieldset>
+						</div>
+					</div>
+					<div class="sort__assembly">
+						<button class="sort__button" type="submit">Сортировать</button>
+						<button class="sort__button" type="button" id="sort_reset">Сбросить</button>
+					</div>
+				</form>
+			</div>
+			<div class="details"></div>
+			<div class="content-pagination">
+				<div class="show-more">
+					<button class="show-more__button">Показать еще</button>
+				</div>
+				<div class="pagination" id="pagination_wrapper"></div>
+			</div>
+			<div class="result"></div>
+		</div>
+	</div>
+
+	<script src="js/app.js"></script>
+
+</body>
+</html>
